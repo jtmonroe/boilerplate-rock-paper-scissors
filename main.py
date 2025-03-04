@@ -4,13 +4,13 @@ from RPS import player, CountModel, DLModel
 from unittest import main
 from functools import partial
 
-def partial_model(model):
+def partial_player(model):
     return partial(player, opponent_history=[], _model=[model])
 
-def Chuck(): return partial_model(CountModel())
-def Dale(): return partial_model(DLModel())
+def Chuck(): return partial_player(CountModel())
+def Dale(): return partial_player(DLModel())
 
-# play(Chuck(), quincy, 1000)
+# play(Dale(), quincy, 1000)
 # play(Chuck(), abbey, 10000)
 # play(Chuck(), kris, 1000)
 # play(Chuck(), mrugesh, 1000)

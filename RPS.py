@@ -62,8 +62,8 @@ class DLModel(Model):
     def __post_init__(self):
         self.model = keras.Sequential([
             keras.layers.Input((self.window_length,)),
-            keras.layers.Dense(15),
-            keras.layers.Dense(30),
+            keras.layers.Dense(15, activation='sigmoid'),
+            keras.layers.Dense(30, activation='sigmoid'),
             keras.layers.Dense(1)
         ])
 
